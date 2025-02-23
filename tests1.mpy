@@ -1,0 +1,26 @@
+from machine import Pin, PWM
+from utime import sleep
+
+x = PWM(Pin(23))  # Initialize PWM on Pin 23
+x.freq(50)  # Set frequency to 50Hz for servo control
+
+while True:
+    # Move to 0 degrees
+    print("0 degree")
+    x.duty_u16(1638)  
+    sleep(2)
+    
+    
+    # # Move to 90 degrees
+    print("90 degree")
+    x.duty_u16(4915)  
+    sleep(2)
+    
+
+    # Move to 180 degrees
+    print("180 degree")
+    x.duty_u16(8192) 
+    sleep(2)
+    
+
+    print('Servo moved')
